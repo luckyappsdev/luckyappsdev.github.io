@@ -32,7 +32,7 @@ h2{font-family:Unbounded,Manrope,sans-serif;font-weight:500;font-size:1.2rem;mar
 .tag.plat{background:#e8eef0;color:var(--ink)}
 .tag.dev{background:#fdf3d0;color:#8a6a00}
 .desc{margin:0}
-ul.feat{margin:0;padding-left:1.2em;color:var(--muted)}
+ul.feat{margin:10px 0 0;padding-left:1.2em;color:var(--muted)}
 ul.feat li{margin:4px 0}
 details{border-top:1px solid var(--line);padding-top:10px}
 summary{cursor:pointer;font-weight:800;color:var(--green)}
@@ -84,21 +84,23 @@ var APPS = [
     },
     feat: {
       ru: [
-        "Подобранный автором перечень регламентных работ. Сроки замены в приложении носят рекомендательный характер и отражают субъективное мнение автора, основанное на статистике и собственном опыте",
+        "Подобранный автором перечень регламентных работ. Сроки замены в приложении носят рекомендательный характер и отражают субъективное мнение автора, основанное на статистике и собственном опыте, однако не являются заменой руководства по эксплуатации",
+        "Можно вести до 5 автомобилей",
         "Напоминания за 10, 5 и 1 день до запланированного срока, а при его пропуске — через каждые 5 дней",
         "Цветовая индикация приближения обслуживания: зелёный (больше 90 дней), жёлтый (90–30), оранжевый (меньше 30), красный (обслуживание не выполнено)",
         "Данные хранятся только на вашем телефоне, есть возможность резервирования данных"
       ],
       en: [
-        "A list of routine services selected by the author. Replacement intervals in the app are recommendations only and reflect the author's subjective opinion, based on statistics and personal experience",
+        "A list of routine services selected by the author. Replacement intervals in the app are recommendations only and reflect the author's subjective opinion, based on statistics and personal experience, but are not a substitute for the vehicle's owner's manual",
+        "Up to 5 cars can be tracked",
         "Reminders 10, 5 and 1 day before the planned date, and every 5 days if it is missed",
         "Colour-coded deadlines: green (over 90 days), yellow (90–30), orange (under 30), red (service not done)",
         "Data is stored only on your phone, with backup and restore"
       ]
     },
     more: {
-      ru: ["Можно вести до 5 автомобилей.", "Создано при помощи AI (ChatGPT, Kimi 2.6 Adagio, Claude Sonnet) и при полном отсутствии знаний по программированию."],
-      en: ["You can track up to 5 cars.", "Made with AI (ChatGPT, Kimi 2.6 Adagio, Claude Sonnet) and with no programming knowledge at all."]
+      ru: ["Создано при помощи AI (ChatGPT, Kimi 2.6 Adagio, Claude Sonnet) и при полном отсутствии знаний по программированию."],
+      en: ["Made with AI (ChatGPT, Kimi 2.6 Adagio, Claude Sonnet) and with no programming knowledge at all."]
     }
   },
   {
@@ -170,10 +172,10 @@ function render() {
     var stars = "";
     for (var i = 1; i <= 5; i++) stars += '<button type="button" data-a="' + a.id + '" data-s="' + i + '" class="' + (avg && i <= Math.round(avg) ? "on" : "") + '" aria-label="' + i + '">★</button>';
     var feat = a.feat[lang].length ? '<ul class="feat">' + a.feat[lang].map(function (f) { return "<li>" + esc(f) + "</li>"; }).join("") + "</ul>" : "";
-    var more = '<details data-a="' + a.id + '"' + (openIds.indexOf(a.id) > -1 ? " open" : "") + '><summary>' + T.more + '</summary>' + a.more[lang].map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") + '</details>';
+    var more = '<details data-a="' + a.id + '"' + (openIds.indexOf(a.id) > -1 ? " open" : "") + '><summary>' + T.more + '</summary>' + feat + a.more[lang].map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") + '</details>';
     card.innerHTML =
       '<div class="top"><img class="icon' + (a.round ? " round" : "") + '" src="' + a.icon + '" alt=""><div><h2></h2><span class="tag plat">' + (a.platform === "android" ? "Android" : "Windows") + '</span> <span class="tag ' + a.status + '">' + T[a.status] + '</span></div></div>' +
-      '<p class="desc"></p>' + feat + more +
+      '<p class="desc"></p>' + more +
       '<div class="meta"><span>' + st.downloads + ' ' + T.downloads + '</span><span>' + (avg ? "★ " + avg + " (" + st.votes + ")" : T.none) + '</span></div>' +
       '<div class="stars"><span>' + T.rate + '</span> ' + stars + '</div>' +
       '<a class="dl" data-a="' + a.id + '" ' + (a.file ? 'href="' + a.file + '"' : 'aria-disabled="true"') + '>' + (a.file ? T["dl_" + a.platform] : T.soon) + '</a>' +
