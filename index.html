@@ -44,6 +44,7 @@ details p{color:var(--muted);margin:8px 0 0;font-size:.95rem}
 .dl:hover{background:var(--green)}
 .dl[aria-disabled=true]{background:#c9d6cd;color:#5b7267;pointer-events:none}
 .hint{font-size:.88rem;color:var(--muted);margin:0}
+.hint a{color:var(--green);font-weight:800;word-break:break-all}
 button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 footer p{margin:4px 0}
 footer a{color:var(--green);font-weight:800}
@@ -64,7 +65,7 @@ footer{margin-top:44px;color:var(--muted);font-size:.9rem;border-top:1px solid v
     <p data-t="sub"></p>
   </section>
   <main class="grid" id="apps"></main>
-  <footer><p><span data-t="contact"></span> <a href="mailto:luckyapps1975@gmail.com">luckyapps1975@gmail.com</a></p><p data-t="foot"></p></footer>
+  <footer><p data-t="ai"></p><p><span data-t="contact"></span> <a href="mailto:luckyapps1975@gmail.com">luckyapps1975@gmail.com</a></p><p data-t="foot"></p></footer>
 </div>
 
 <script>
@@ -99,8 +100,8 @@ var APPS = [
       ]
     },
     more: {
-      ru: ["Создано при помощи AI (ChatGPT, Kimi 2.6 Adagio, Claude Sonnet) и при полном отсутствии знаний по программированию."],
-      en: ["Made with AI (ChatGPT, Kimi 2.6 Adagio, Claude Sonnet) and with no programming knowledge at all."]
+      ru: [],
+      en: []
     }
   },
   {
@@ -115,10 +116,14 @@ var APPS = [
       ru: "Лёгкий монитор для Bluetooth-устройств (мышь, клавиатура), работающих от аккумулятора, для Windows 10/11. Отображает состояние и уровень заряда сопряжённых устройств, хотя и не всех моделей 0_0",
       en: "A lightweight monitor for battery-powered Bluetooth devices (mouse, keyboard) for Windows 10/11. Shows the status and charge level of paired devices, though not every model 0_0"
     },
+    req: {
+      ru: "Требуется: 64-разрядная Windows 10 (версия 2004 и новее) или Windows 11 и .NET 10 Desktop Runtime x64 (бесплатно, от Microsoft: <a href='https://dotnet.microsoft.com/download/dotnet/10.0' target='_blank' rel='noopener'>dotnet.microsoft.com/download/dotnet/10.0</a> → «.NET Desktop Runtime»). Если его нет, программа при запуске сама покажет окно со ссылкой на скачивание.",
+      en: "Requires: 64-bit Windows 10 (version 2004 or newer) or Windows 11, and .NET 10 Desktop Runtime x64 (free, from Microsoft: <a href='https://dotnet.microsoft.com/download/dotnet/10.0' target='_blank' rel='noopener'>dotnet.microsoft.com/download/dotnet/10.0</a> → \".NET Desktop Runtime\"). If it is missing, the program shows a window with a download link when it starts."
+    },
     feat: { ru: [], en: [] },
     more: {
-      ru: ["Создано при помощи AI (ChatGPT, Kimi 2.6 Adagio, Claude Sonnet) и при полном отсутствии знаний по программированию.", "Звуки можно менять в папке Sounds. Формат: WAV, аудиокодек Linear PCM, 22050 Гц, 16 бит. Экспериментируйте, сохраняя имена файлов приложения.", "Если программа полезная, пожалуйста, покормите моего котика."],
-      en: ["Made with AI (ChatGPT, Kimi 2.6 Adagio, Claude Sonnet) and with no programming knowledge at all.", "You can change the sounds in the Sounds folder. Format: WAV, Linear PCM codec, 22050 Hz, 16 bit. Experiment, but keep the original file names.", "If you find the program useful, please feed my cat."]
+      ru: ["Звуки можно менять в папке Sounds. Формат: WAV, аудиокодек Linear PCM, 22050 Гц, 16 бит. Экспериментируйте, сохраняя имена файлов приложения.", "Если программа полезная, пожалуйста, покормите моего котика."],
+      en: ["You can change the sounds in the Sounds folder. Format: WAV, Linear PCM codec, 22050 Hz, 16 bit. Experiment, but keep the original file names.", "If you find the program useful, please feed my cat."]
     }
   }
 ];
@@ -132,7 +137,7 @@ var TEXT = {
     ready: "Готово", dev: "В разработке",
     hint_android: "Телефон может спросить разрешение на установку из этого источника. Это нормально: разрешите установку для вашего браузера.",
     hint_windows: "Windows может показать окно «Система Windows защитила ваш компьютер». Нажмите «Подробнее», затем «Выполнить в любом случае».",
-    contact: "Замечания и пожелания:", foot: "© Lucky Apps. Все права защищены."
+    ai: "Создано при помощи AI (ChatGPT, Kimi 2.6 Adagio, Claude Sonnet) и при полном отсутствии знаний по программированию.", contact: "Замечания и пожелания:", foot: "© Lucky Apps. Все права защищены."
   },
   en: {
     h1: "Android and Windows apps that help you get things done",
@@ -142,7 +147,7 @@ var TEXT = {
     ready: "Ready", dev: "In development",
     hint_android: "Your phone may ask to allow installs from this source. That is normal: allow it for your browser.",
     hint_windows: "Windows may show a \"Windows protected your PC\" window. Click \"More info\", then \"Run anyway\".",
-    contact: "Feedback and suggestions:", foot: "© Lucky Apps. All rights reserved."
+    ai: "Made with AI (ChatGPT, Kimi 2.6 Adagio, Claude Sonnet) and with no programming knowledge at all.", contact: "Feedback and suggestions:", foot: "© Lucky Apps. All rights reserved."
   }
 };
 
@@ -179,7 +184,7 @@ function render() {
       '<div class="meta"><span>' + st.downloads + ' ' + T.downloads + '</span><span>' + (avg ? "★ " + avg + " (" + st.votes + ")" : T.none) + '</span></div>' +
       '<div class="stars"><span>' + T.rate + '</span> ' + stars + '</div>' +
       '<a class="dl" data-a="' + a.id + '" ' + (a.file ? 'href="' + a.file + '"' : 'aria-disabled="true"') + '>' + (a.file ? T["dl_" + a.platform] : T.soon) + '</a>' +
-      '<p class="hint">' + T["hint_" + a.platform] + '</p>';
+      (a.req ? '<p class="hint">' + a.req[lang] + '</p>' : '') + '<p class="hint">' + T["hint_" + a.platform] + '</p>';
     card.querySelector("h2").textContent = a.name[lang];
     card.querySelector(".desc").textContent = a.desc[lang];
     box.appendChild(card);
