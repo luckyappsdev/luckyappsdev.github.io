@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Use — BTRMousePlus</title>
+<meta name="robots" content="index,follow">
+<style>
+@font-face{font-family:Manrope;src:url("fonts/Manrope.woff") format("woff");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:Unbounded;src:url("fonts/Unbounded.woff") format("woff");font-weight:200 900;font-style:normal;font-display:swap}
+:root{--bg:#f3f7f2;--card:#fff;--ink:#12352a;--muted:#5b7267;--green:#2f9e5b;--line:#d7e3da}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 48px}
+a{color:var(--green);font-weight:800}
+.back{display:inline-block;margin-bottom:18px;text-decoration:none}
+h1{font-family:Unbounded,Manrope,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;font-weight:700;font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.2;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 20px;font-weight:600}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.langs button{border:1.5px solid var(--ink);background:none;border-radius:999px;padding:5px 14px;font:inherit;font-weight:800;color:var(--ink);cursor:pointer}
+.langs button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:6px 24px 20px}
+h2{font-size:1.05rem;margin:20px 0 6px}
+.card p{margin:0;color:#2c4a3e}
+.upd{margin-top:18px;color:var(--muted);font-size:.9rem}
+button:focus-visible,a:focus-visible{outline:3px solid #e8b923;outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html" id="back"></a>
+  <h1 id="title"></h1>
+  <p class="sub">BTRMousePlus</p>
+  <div class="langs" id="langs" role="group" aria-label="Language"></div>
+  <div class="card" id="card"></div>
+  <p class="upd" id="upd"></p>
+</div>
+<script>
+var L = {"ru": {"name": "Русский", "title": "Условия использования", "back": "← На главную", "upd": "Обновлено: октябрь 2026", "s": [["Использование", "Программа BTRMousePlus предоставляется бесплатно для личного использования, в том числе на личном рабочем компьютере пользователя."], ["Добровольность", "Скачивание и установка программы — исключительно добровольное решение пользователя. Пользователь самостоятельно оценивает, подходит ли ему программа, и принимает на себя риски, связанные с её использованием."], ["Без гарантий", "Программа предоставляется «как есть», без каких-либо гарантий, в том числе работы с конкретными моделями устройств. В максимально допустимой законом степени автор не несёт ответственности за любой прямой или косвенный ущерб, потерю данных и иные последствия установки и использования программы."], ["Распространение", "Автор распространяет программу только через этот сайт. Копии программы на других ресурсах и полученные иным путём автор не контролирует и не отвечает за их содержание и безопасность. Рекомендуем скачивать программу с этого сайта и проверять файл перед установкой."], ["Ограничения", "Запрещены декомпиляция, дизассемблирование, обратный инжиниринг и изменение исполняемых файлов программы. Замена звуковых файлов в папке Sounds предусмотрена программой и не запрещена."], ["Контакты", "Вопросы и пожелания: "]]}, "en": {"name": "English", "title": "Terms of Use", "back": "← Home", "upd": "Last updated: October 2026", "s": [["Use", "BTRMousePlus is provided free of charge for personal use, including on the user's own work computer."], ["Voluntary installation", "Downloading and installing the program is entirely the user's own voluntary decision. The user decides whether the program is suitable and accepts the risks associated with using it."], ["No warranty", "The program is provided \"as is\", without any warranty, including that it will work with specific device models. To the maximum extent permitted by law, the author is not liable for any direct or indirect damage, loss of data or other consequences of installing and using the program."], ["Distribution", "The author distributes the program only through this website. The author does not control copies of the program on other websites or obtained in other ways and is not responsible for their content or safety. We recommend downloading the program from this website and checking the file before installing."], ["Restrictions", "Decompiling, disassembling, reverse engineering and modifying the program's executable files are prohibited. Replacing the sound files in the Sounds folder is provided for by the program and is not prohibited."], ["Contact", "Questions and feedback: "]]}};
+var MAIL = "luckyapps1975@gmail.com";
+var order = ["en","ru"];
+var cur = "en";
+try { var s = localStorage.getItem("plang"); if (s && L[s]) cur = s; else { var n = (navigator.language || "").slice(0,2); if (L[n]) cur = n; else if (/^(ru|uk|be)$/.test(n)) cur = "ru"; } } catch (e) {}
+function render() {
+  var t = L[cur];
+  document.documentElement.lang = cur;
+  document.getElementById("back").textContent = t.back;
+  document.getElementById("title").textContent = t.title;
+  document.getElementById("upd").textContent = t.upd;
+  var lb = document.getElementById("langs"); lb.innerHTML = "";
+  order.forEach(function (k) {
+    var b = document.createElement("button"); b.type = "button"; b.textContent = L[k].name;
+    b.setAttribute("aria-pressed", k === cur);
+    b.onclick = function () { cur = k; try { localStorage.setItem("plang", k); } catch (e) {} render(); };
+    lb.appendChild(b);
+  });
+  var c = document.getElementById("card"); c.innerHTML = "";
+  t.s.forEach(function (sec, i) {
+    var h = document.createElement("h2"); h.textContent = sec[0]; c.appendChild(h);
+    var p = document.createElement("p"); p.textContent = sec[1];
+    if (i === t.s.length - 1) { var a = document.createElement("a"); a.href = "mailto:" + MAIL; a.textContent = MAIL; p.appendChild(a); }
+    c.appendChild(p);
+  });
+}
+render();
+</script>
+</body>
+</html>

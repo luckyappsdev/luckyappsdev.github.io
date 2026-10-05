@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — My Precious! / Моя прелесть!</title>
+<meta name="robots" content="index,follow">
+<style>
+@font-face{font-family:Manrope;src:url("fonts/Manrope.woff") format("woff");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:Unbounded;src:url("fonts/Unbounded.woff") format("woff");font-weight:200 900;font-style:normal;font-display:swap}
+:root{--bg:#f3f7f2;--card:#fff;--ink:#12352a;--muted:#5b7267;--green:#2f9e5b;--line:#d7e3da}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 48px}
+a{color:var(--green);font-weight:800}
+.back{display:inline-block;margin-bottom:18px;text-decoration:none}
+h1{font-family:Unbounded,Manrope,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;font-weight:700;font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.2;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 20px;font-weight:600}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.langs button{border:1.5px solid var(--ink);background:none;border-radius:999px;padding:5px 14px;font:inherit;font-weight:800;color:var(--ink);cursor:pointer}
+.langs button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:6px 24px 20px}
+h2{font-size:1.05rem;margin:20px 0 6px}
+.card p{margin:0;color:#2c4a3e}
+.upd{margin-top:18px;color:var(--muted);font-size:.9rem}
+button:focus-visible,a:focus-visible{outline:3px solid #e8b923;outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html" id="back"></a>
+  <h1 id="title"></h1>
+  <p class="sub">My Precious! / Моя прелесть!</p>
+  <div class="langs" id="langs" role="group" aria-label="Language"></div>
+  <div class="card" id="card"></div>
+  <p class="upd" id="upd"></p>
+</div>
+<script>
+var L = {"ru": {"name": "Русский", "title": "Политика конфиденциальности", "back": "← На главную", "upd": "Обновлено: октябрь 2026", "s": [["Данные", "Приложение не собирает, не передаёт и не обрабатывает персональные данные пользователей. Данные об автомобилях, пробеге и сроках обслуживания хранятся только на устройстве пользователя, во внутренней памяти приложения, недоступной другим приложениям."], ["Интернет и третьи лица", "Приложение не запрашивает разрешение на доступ в интернет и поэтому не может само отправлять данные по сети. В нём нет рекламы, аналитики и сторонних модулей сбора данных; оно не отправляет данные на собственные серверы и не передаёт информацию третьим лицам. Некоторые экраны (например, ссылка на PayPal или открытие установленного криптокошелька) открывают другие приложения или браузер по инициативе самого пользователя. Это стандартное действие Android, а не передача данных из приложения."], ["Разрешения", "Разрешения используются только для напоминаний: показ уведомлений, срабатывание в точное время, восстановление напоминаний после перезагрузки устройства и фоновая работа. Приложение не запрашивает доступ к контактам, камере, микрофону, геолокации и интернету."], ["Резервные копии", "Файл резервной копии создаёт сам пользователь и сохраняет в выбранную им папку; у автора доступа к нему нет. Системное резервное копирование Android для приложения отключено, поэтому данные не копируются в аккаунт Google автоматически."], ["Изменения", "Если в будущем появится облачная функция, политика будет обновлена, а пользователи уведомлены."], ["Контакты", "Вопросы и пожелания: "]]}, "en": {"name": "English", "title": "Privacy Policy", "back": "← Home", "upd": "Last updated: October 2026", "s": [["Data", "The app does not collect, transmit or process any personal data of its users. Vehicle, mileage and maintenance data is stored only on the user's device, in the app's internal storage, which other apps cannot access."], ["Internet and third parties", "The app does not request the Internet permission, so it cannot send data over the network by itself. It contains no advertising, analytics or third-party data collection modules, does not send data to any server of its own and does not share information with third parties. Some screens (such as the PayPal link or opening an installed crypto wallet) open other apps or the browser at the user's own initiative. This is a standard Android action, not data transmission by the app."], ["Permissions", "Permissions are used only for reminders: showing notifications, firing at the exact time, restoring reminders after the device restarts, and background work. The app does not request access to contacts, camera, microphone, location or the Internet."], ["Backups", "The backup file is created by the user and saved to a folder the user chooses; the author has no access to it. Android's system backup is turned off for the app, so its data is not copied to a Google account automatically."], ["Changes", "If a cloud feature is added in the future, this policy will be updated and users will be notified."], ["Contact", "Questions and feedback: "]]}, "es": {"name": "Español", "title": "Política de privacidad", "back": "← Inicio", "upd": "Última actualización: octubre de 2026", "s": [["Datos", "La aplicación no recopila, transmite ni procesa datos personales de los usuarios. Los datos de los vehículos, el kilometraje y el mantenimiento se almacenan únicamente en el dispositivo del usuario, en el almacenamiento interno de la aplicación, al que otras aplicaciones no pueden acceder."], ["Internet y terceros", "La aplicación no solicita el permiso de Internet, por lo que no puede enviar datos por la red por sí sola. No contiene publicidad, analítica ni módulos de recopilación de datos de terceros, no envía datos a ningún servidor propio y no comparte información con terceros. Algunas pantallas (como el enlace a PayPal o la apertura de un monedero cripto instalado) abren otras aplicaciones o el navegador por iniciativa del propio usuario. Es una acción estándar de Android, no una transmisión de datos por parte de la aplicación."], ["Permisos", "La aplicación usa permisos solo para los recordatorios: mostrar notificaciones, activarse a la hora exacta, restablecer los recordatorios tras reiniciar el dispositivo y trabajar en segundo plano. No solicita acceso a contactos, cámara, micrófono, ubicación ni Internet."], ["Copias de seguridad", "El archivo de copia de seguridad lo crea el propio usuario y se guarda en la carpeta que elija; el autor no tiene acceso a él. La copia de seguridad del sistema Android está desactivada para la aplicación, por lo que sus datos no se copian automáticamente a una cuenta de Google."], ["Cambios", "Si en el futuro se añade alguna función en la nube, esta política se actualizará y se avisará a los usuarios."], ["Contacto", "Preguntas y comentarios: "]]}, "pt": {"name": "Português", "title": "Política de privacidade", "back": "← Início", "upd": "Última atualização: outubro de 2026", "s": [["Dados", "O aplicativo não coleta, transmite nem processa dados pessoais dos usuários. Os dados de veículos, quilometragem e manutenção ficam armazenados apenas no dispositivo do usuário, no armazenamento interno do aplicativo, ao qual outros aplicativos não têm acesso."], ["Internet e terceiros", "O aplicativo não solicita a permissão de Internet e, portanto, não consegue enviar dados pela rede por conta própria. Não contém anúncios, análises nem módulos de coleta de dados de terceiros, não envia dados para nenhum servidor próprio e não compartilha informações com terceiros. Algumas telas (como o link do PayPal ou a abertura de uma carteira cripto instalada) abrem outros aplicativos ou o navegador por iniciativa do próprio usuário. Essa é uma ação padrão do Android, não uma transmissão de dados pelo aplicativo."], ["Permissões", "O aplicativo usa permissões apenas para os lembretes: exibir notificações, disparar na hora exata, restaurar os lembretes após a reinicialização do dispositivo e trabalhar em segundo plano. Não solicita acesso a contatos, câmera, microfone, localização nem Internet."], ["Backups", "O arquivo de backup é criado pelo próprio usuário e salvo na pasta que ele escolher; o autor não tem acesso a ele. O backup do sistema Android está desativado para o aplicativo, portanto os dados dele não são copiados automaticamente para uma conta Google."], ["Alterações", "Se uma função na nuvem for adicionada no futuro, esta política será atualizada e os usuários serão avisados."], ["Contato", "Dúvidas e sugestões: "]]}, "nl": {"name": "Nederlands", "title": "Privacybeleid", "back": "← Home", "upd": "Laatst bijgewerkt: oktober 2026", "s": [["Gegevens", "De app verzamelt, verzendt of verwerkt geen persoonsgegevens van gebruikers. Gegevens over voertuigen, kilometerstand en onderhoud worden alleen op het apparaat van de gebruiker opgeslagen, in het interne geheugen van de app waar andere apps geen toegang toe hebben."], ["Internet en derden", "De app vraagt geen internetmachtiging aan en kan daarom zelf geen gegevens via het netwerk versturen. De app bevat geen advertenties, analysetools of modules van derden voor gegevensverzameling, stuurt geen gegevens naar eigen servers en deelt geen informatie met derden. Sommige schermen (zoals de PayPal-link of het openen van een geïnstalleerde cryptowallet) openen andere apps of de browser op initiatief van de gebruiker zelf. Dat is een standaardactie van Android en geen gegevensoverdracht door de app."], ["Machtigingen", "De app gebruikt machtigingen alleen voor de herinneringen: meldingen tonen, op het exacte tijdstip afgaan, herinneringen herstellen na het herstarten van het apparaat en op de achtergrond werken. De app vraagt geen toegang tot contacten, camera, microfoon, locatie of internet."], ["Back-ups", "Het back-upbestand wordt door de gebruiker zelf gemaakt en opgeslagen in een door de gebruiker gekozen map; de maker heeft er geen toegang toe. De systeemback-up van Android is voor de app uitgeschakeld, dus de gegevens worden niet automatisch naar een Google-account gekopieerd."], ["Wijzigingen", "Als er in de toekomst een cloudfunctie wordt toegevoegd, wordt dit beleid bijgewerkt en worden gebruikers hiervan op de hoogte gesteld."], ["Contact", "Vragen en suggesties: "]]}, "zh": {"name": "中文", "title": "隐私政策", "back": "← 返回首页", "upd": "最后更新：2026 年 10 月", "s": [["数据", "本应用不会收集、传输或处理用户的任何个人数据。车辆、里程和保养数据仅存储在用户设备上，位于应用的内部存储中，其他应用无法访问。"], ["互联网与第三方", "本应用不申请互联网权限，因此自身无法通过网络发送数据。应用不含广告、统计分析或第三方数据收集组件，不会向任何自有服务器发送数据，也不会与第三方共享信息。部分界面（例如 PayPal 链接或打开已安装的加密货币钱包）会在用户主动操作时打开其他应用或浏览器，这是 Android 的标准行为，并非应用传输数据。"], ["权限", "应用仅为提醒功能使用权限：显示通知、准时触发、设备重启后恢复提醒以及后台运行。应用不会申请通讯录、相机、麦克风、位置或互联网访问权限。"], ["备份", "备份文件由用户自行创建，并保存到用户选择的文件夹，作者无法访问。本应用已关闭 Android 系统备份，因此应用数据不会自动备份到 Google 账号。"], ["变更", "如果将来添加云端功能，本政策将会更新，并通知用户。"], ["联系方式", "问题与建议："]]}};
+var MAIL = "luckyapps1975@gmail.com";
+var order = ["en","ru","es","pt","nl","zh"];
+var cur = "en";
+try { var s = localStorage.getItem("plang"); if (s && L[s]) cur = s; else { var n = (navigator.language || "").slice(0,2); if (L[n]) cur = n; else if (/^(ru|uk|be)$/.test(n)) cur = "ru"; } } catch (e) {}
+function render() {
+  var t = L[cur];
+  document.documentElement.lang = cur;
+  document.getElementById("back").textContent = t.back;
+  document.getElementById("title").textContent = t.title;
+  document.getElementById("upd").textContent = t.upd;
+  var lb = document.getElementById("langs"); lb.innerHTML = "";
+  order.forEach(function (k) {
+    var b = document.createElement("button"); b.type = "button"; b.textContent = L[k].name;
+    b.setAttribute("aria-pressed", k === cur);
+    b.onclick = function () { cur = k; try { localStorage.setItem("plang", k); } catch (e) {} render(); };
+    lb.appendChild(b);
+  });
+  var c = document.getElementById("card"); c.innerHTML = "";
+  t.s.forEach(function (sec, i) {
+    var h = document.createElement("h2"); h.textContent = sec[0]; c.appendChild(h);
+    var p = document.createElement("p"); p.textContent = sec[1];
+    if (i === t.s.length - 1) { var a = document.createElement("a"); a.href = "mailto:" + MAIL; a.textContent = MAIL; p.appendChild(a); }
+    c.appendChild(p);
+  });
+}
+render();
+</script>
+</body>
+</html>

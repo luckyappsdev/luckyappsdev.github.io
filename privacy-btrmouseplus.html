@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — BTRMousePlus</title>
+<meta name="robots" content="index,follow">
+<style>
+@font-face{font-family:Manrope;src:url("fonts/Manrope.woff") format("woff");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:Unbounded;src:url("fonts/Unbounded.woff") format("woff");font-weight:200 900;font-style:normal;font-display:swap}
+:root{--bg:#f3f7f2;--card:#fff;--ink:#12352a;--muted:#5b7267;--green:#2f9e5b;--line:#d7e3da}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 48px}
+a{color:var(--green);font-weight:800}
+.back{display:inline-block;margin-bottom:18px;text-decoration:none}
+h1{font-family:Unbounded,Manrope,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;font-weight:700;font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.2;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 20px;font-weight:600}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.langs button{border:1.5px solid var(--ink);background:none;border-radius:999px;padding:5px 14px;font:inherit;font-weight:800;color:var(--ink);cursor:pointer}
+.langs button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:6px 24px 20px}
+h2{font-size:1.05rem;margin:20px 0 6px}
+.card p{margin:0;color:#2c4a3e}
+.upd{margin-top:18px;color:var(--muted);font-size:.9rem}
+button:focus-visible,a:focus-visible{outline:3px solid #e8b923;outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html" id="back"></a>
+  <h1 id="title"></h1>
+  <p class="sub">BTRMousePlus</p>
+  <div class="langs" id="langs" role="group" aria-label="Language"></div>
+  <div class="card" id="card"></div>
+  <p class="upd" id="upd"></p>
+</div>
+<script>
+var L = {"ru": {"name": "Русский", "title": "Политика конфиденциальности", "back": "← На главную", "upd": "Обновлено: октябрь 2026", "s": [["Данные", "Программа BTRMousePlus не собирает и не передаёт персональные данные пользователей. Информация об уровне заряда и состоянии сопряжённых Bluetooth-устройств получается средствами Windows, обрабатывается локально и показывается только на вашем компьютере."], ["Интернет и третьи лица", "Сама программа не предполагает обращения к интернету и не предназначена для передачи каких-либо данных третьим лицам. Если на компьютере не установлена платформа .NET Desktop Runtime, при запуске программа покажет окно со ссылкой на страницу загрузки Microsoft. Переход по этой ссылке происходит только по вашему решению и выполняется браузером."], ["Поддержка автора", "В окнах поддержки автора кнопка PayPal по вашему нажатию открывает сайт PayPal в браузере; дальнейшие действия выполняются на сайте PayPal по его правилам. Крипто-экраны только показывают адрес кошелька и QR-код. Программа не получает и не хранит платёжные данные."], ["Настройки и файлы", "На вашем компьютере хранятся настройки программы (например, уровень громкости и положение окна) и список известных программе Bluetooth-устройств: имя устройства, его Bluetooth-адрес (идентификатор устройства) и последний уровень заряда. Эти данные никуда не передаются. Файлы находятся в папке %AppData%\\BTRMousePlus; при удалении программы она не удаляется, вы можете удалить её вручную в любой момент. Звуковые файлы тоже хранятся на вашем компьютере; их можно заменять в папке Assets\\Sounds в каталоге установки программы."], ["Изменения", "Если в будущем у самой программы появятся функции, использующие интернет (например, проверка обновлений), политика конфиденциальности будет обновлена, а пользователи уведомлены."], ["Контакты", "Вопросы и пожелания: "]]}, "en": {"name": "English", "title": "Privacy Policy", "back": "← Home", "upd": "Last updated: October 2026", "s": [["Data", "BTRMousePlus does not collect or transmit any personal data of its users. Information about the charge level and status of paired Bluetooth devices is obtained through Windows, processed locally and shown only on your computer."], ["Internet and third parties", "The program itself is not designed to access the Internet and is not intended to transmit any data to third parties. If the .NET Desktop Runtime is not installed on your computer, the program shows a window with a link to Microsoft's download page when it starts. Following that link is entirely your own decision and is done by your browser."], ["Supporting the author", "In the author support windows, the PayPal button opens the PayPal website in your browser when you press it; any further actions take place on PayPal's website under its rules. The crypto screens only display a wallet address and a QR code. The program does not receive or store any payment data."], ["Settings and files", "Your computer stores the program's settings (for example, the volume level and window position) and a list of Bluetooth devices known to the program: the device name, its Bluetooth address (a device identifier) and the last charge level. This data is not transmitted anywhere. The files are located in the folder %AppData%\\BTRMousePlus; the uninstaller does not remove it, and you can delete it manually at any time. Sound files are also stored on your computer; you can replace them in the Assets\\Sounds folder inside the program's installation folder."], ["Changes", "If the program itself gains features that use the Internet in the future (for example, update checks), this privacy policy will be updated and users will be notified."], ["Contact", "Questions and feedback: "]]}};
+var MAIL = "luckyapps1975@gmail.com";
+var order = ["en","ru"];
+var cur = "en";
+try { var s = localStorage.getItem("plang"); if (s && L[s]) cur = s; else { var n = (navigator.language || "").slice(0,2); if (L[n]) cur = n; else if (/^(ru|uk|be)$/.test(n)) cur = "ru"; } } catch (e) {}
+function render() {
+  var t = L[cur];
+  document.documentElement.lang = cur;
+  document.getElementById("back").textContent = t.back;
+  document.getElementById("title").textContent = t.title;
+  document.getElementById("upd").textContent = t.upd;
+  var lb = document.getElementById("langs"); lb.innerHTML = "";
+  order.forEach(function (k) {
+    var b = document.createElement("button"); b.type = "button"; b.textContent = L[k].name;
+    b.setAttribute("aria-pressed", k === cur);
+    b.onclick = function () { cur = k; try { localStorage.setItem("plang", k); } catch (e) {} render(); };
+    lb.appendChild(b);
+  });
+  var c = document.getElementById("card"); c.innerHTML = "";
+  t.s.forEach(function (sec, i) {
+    var h = document.createElement("h2"); h.textContent = sec[0]; c.appendChild(h);
+    var p = document.createElement("p"); p.textContent = sec[1];
+    if (i === t.s.length - 1) { var a = document.createElement("a"); a.href = "mailto:" + MAIL; a.textContent = MAIL; p.appendChild(a); }
+    c.appendChild(p);
+  });
+}
+render();
+</script>
+</body>
+</html>
