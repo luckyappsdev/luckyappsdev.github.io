@@ -5,29 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lucky Apps</title>
 <meta name="description" content="Android and Windows apps by Lucky Apps. Приложения для Android и Windows от Lucky Apps.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:Manrope;src:url("fonts/Manrope.woff") format("woff");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:Unbounded;src:url("fonts/Unbounded.woff") format("woff");font-weight:200 900;font-style:normal;font-display:swap}
 :root{--bg:#f3f7f2;--card:#fff;--ink:#12352a;--muted:#5b7267;--green:#2f9e5b;--gold:#e8b923;--line:#d7e3da}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,Arial,sans-serif;line-height:1.55}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.55}
 .wrap{max-width:960px;margin:0 auto;padding:24px 20px 48px}
 header{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.logo{font-family:Unbounded,Manrope,sans-serif;font-weight:700;font-size:1.15rem}
+.logo{font-family:Unbounded,Manrope,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;font-weight:700;font-size:1.15rem}
 .logo span{color:var(--green)}
 .lang{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden}
 .lang button{border:0;background:none;padding:6px 14px;font:inherit;font-weight:800;color:var(--ink);cursor:pointer}
 .lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
 .hero{padding:56px 0 36px}
-h1{font-family:Unbounded,Manrope,sans-serif;font-weight:700;font-size:clamp(1.9rem,5vw,3rem);line-height:1.15;margin:0 0 14px;max-width:16em}
+h1{font-family:Unbounded,Manrope,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;font-weight:700;font-size:clamp(1.9rem,5vw,3rem);line-height:1.15;margin:0 0 14px;max-width:16em}
 .hero p{font-size:1.1rem;color:var(--muted);max-width:34em;margin:0}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;align-items:start}
 .app{background:var(--card);border:1.5px solid var(--line);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:14px}
 .top{display:flex;gap:14px;align-items:center}
 .icon{width:64px;height:64px;flex:none;object-fit:contain}
 .icon.round{border-radius:15px}
-h2{font-family:Unbounded,Manrope,sans-serif;font-weight:500;font-size:1.2rem;margin:0}
+h2{font-family:Unbounded,Manrope,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;font-weight:500;font-size:1.2rem;margin:0}
 .tag{display:inline-block;font-size:.8rem;font-weight:800;background:#e7f3ea;color:var(--green);border-radius:8px;padding:1px 8px;margin-top:4px}
 .tag.plat{background:#e8eef0;color:var(--ink)}
 .tag.dev{background:#fdf3d0;color:#8a6a00}
@@ -46,7 +45,7 @@ details p a{color:var(--green);font-weight:800}
 .dl[aria-disabled=true]{background:#c9d6cd;color:#5b7267;pointer-events:none}
 .hint{font-size:.88rem;color:var(--muted);margin:0}
 .sec{margin-top:30px;background:var(--card);border:1.5px solid var(--line);border-radius:22px;padding:6px 24px 20px}
-.sec h3{font-family:Unbounded,Manrope,sans-serif;font-weight:500;font-size:1.05rem;margin:18px 0 8px}
+.sec h3{font-family:Unbounded,Manrope,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;font-weight:500;font-size:1.05rem;margin:18px 0 8px}
 .sec p{margin:8px 0 0;color:var(--muted);font-size:.95rem}
 .sec a{color:var(--green);font-weight:800}
 .gal{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding:12px;background:#eef4ef;border-radius:14px}
@@ -160,7 +159,10 @@ var APPS = [
   },
   {
     id: "app2",
-    doc: { href: "license-btrmouseplus.html", ru: "Условия использования", en: "Terms of Use" },
+    docs: [
+      { href: "privacy-btrmouseplus.html", ru: "Политика конфиденциальности", en: "Privacy Policy" },
+      { href: "license-btrmouseplus.html", ru: "Условия использования", en: "Terms of Use" }
+    ],
     langs: ["Русский", "English"],
     shots: [
       { src: "data:image/png;base64,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", w: 183, cap: { ru: "Индикатор", en: "Indicator" } },
@@ -215,7 +217,7 @@ var TEXT = {
     ready: "Готово", dev: "В разработке",
     hint_android: "Телефон может спросить разрешение на установку из этого источника.",
     hint_windows: "Windows может показать окно «Система Windows защитила ваш компьютер».",
-    ai: "В связи с отсутствием у автора знаний по программированию при создании приложений использовался AI (ChatGPT, Kimi 2.6 Adagio, Claude Sonnet).", sec_h: "Безопасность", sec_p: ["Файлы приложений новые: у них пока нет платной цифровой подписи и накопленной репутации, поэтому телефон, Windows или антивирус могут отреагировать на них предупреждением.", "Это не значит, что файл опасен, но для вашей безопасности рекомендуем перед установкой проверить скачанный файл любыми доступными способами и программами по вашему выбору, например антивирусом на вашем устройстве или онлайн-сервисами наподобие <a href='https://www.virustotal.com/' target='_blank' rel='noopener'>VirusTotal</a>."],
+    ai: "При создании приложений использовался AI (ChatGPT, Kimi 2.6 Adagio, Claude Sonnet).", sec_h: "Безопасность", sec_p: ["Файлы приложений новые: у них пока нет платной цифровой подписи и накопленной репутации, поэтому телефон, Windows или антивирус могут отреагировать на них предупреждением.", "Это не значит, что файл опасен, но для вашей безопасности рекомендуем перед установкой проверить скачанный файл любыми доступными способами и программами по вашему выбору, например антивирусом на вашем устройстве или онлайн-сервисами наподобие <a href='https://www.virustotal.com/' target='_blank' rel='noopener'>VirusTotal</a>."],
     contact: "Замечания и пожелания:", foot: "© Lucky Apps. Все права защищены."
   },
   en: {
@@ -226,7 +228,7 @@ var TEXT = {
     ready: "Ready", dev: "In development",
     hint_android: "Your phone may ask to allow installs from this source.",
     hint_windows: "Windows may show a \"Windows protected your PC\" window.",
-    ai: "Because the author has no programming knowledge, AI (ChatGPT, Kimi 2.6 Adagio, Claude Sonnet) was used to create the apps.", sec_h: "Safety", sec_p: ["The app files are new: they do not yet have a paid digital signature or an established reputation, so your phone, Windows or antivirus may react to them with a warning.", "This does not mean the file is dangerous, but for your safety we recommend checking the downloaded file before installing, by any available means and programs of your choice, for example with an antivirus on your device or online services such as <a href='https://www.virustotal.com/' target='_blank' rel='noopener'>VirusTotal</a>."],
+    ai: "AI (ChatGPT, Kimi 2.6 Adagio, Claude Sonnet) was used to create the apps.", sec_h: "Safety", sec_p: ["The app files are new: they do not yet have a paid digital signature or an established reputation, so your phone, Windows or antivirus may react to them with a warning.", "This does not mean the file is dangerous, but for your safety we recommend checking the downloaded file before installing, by any available means and programs of your choice, for example with an antivirus on your device or online services such as <a href='https://www.virustotal.com/' target='_blank' rel='noopener'>VirusTotal</a>."],
     contact: "Feedback and suggestions:", foot: "© Lucky Apps. All rights reserved."
   }
 };
@@ -262,7 +264,7 @@ function render() {
     var feat = a.feat[lang].length ? '<ul class="feat">' + a.feat[lang].map(function (f) { return "<li>" + esc(f) + "</li>"; }).join("") + "</ul>" : "";
     var shots = a.shots && a.shots.length ? '<div class="shots">' + a.shots.map(function (x) { return '<figure><img src="' + x.src + '" style="width:' + x.w + 'px" alt="' + esc(x.cap[lang]) + '"><figcaption>' + esc(x.cap[lang]) + '</figcaption></figure>'; }).join("") + '</div>' : "";
     var gal = a.gallery ? '<div class="gal" role="group" aria-label="' + esc(T.gal) + '">' + a.gallery.items.map(function (g, i) { return '<button type="button" class="gthumb" data-g="' + a.id + '" data-i="' + i + '"><img src="' + a.gallery.dir + g.n + '-s.webp" width="110" height="226" loading="lazy" decoding="async" alt="' + esc(g.cap[lang]) + '"><span>' + esc(g.cap[lang]) + '</span></button>'; }).join("") + '</div>' : "";
-    var more = '<details data-a="' + a.id + '"' + (openIds.indexOf(a.id) > -1 ? " open" : "") + '><summary>' + T.more + '</summary>' + feat + a.more[lang].map(function (p) { return Array.isArray(p) ? "<ul class='feat'>" + p.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" : "<p>" + esc(p) + "</p>"; }).join("") + '<p><a href="' + a.doc.href + '">' + a.doc[lang] + '</a></p></details>';
+    var more = '<details data-a="' + a.id + '"' + (openIds.indexOf(a.id) > -1 ? " open" : "") + '><summary>' + T.more + '</summary>' + feat + a.more[lang].map(function (p) { return Array.isArray(p) ? "<ul class='feat'>" + p.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" : "<p>" + esc(p) + "</p>"; }).join("") + (a.docs || [a.doc]).map(function (x) { return '<p><a href="' + x.href + '">' + x[lang] + '</a></p>'; }).join("") + '</details>';
     card.innerHTML =
       '<div class="top"><img class="icon' + (a.round ? " round" : "") + '" src="' + a.icon + '" alt=""><div><h2></h2><span class="tag plat">' + (a.platform === "android" ? "Android" : "Windows") + '</span> <span class="tag ' + a.status + '">' + T[a.status] + '</span></div></div>' +
       '<p class="desc"></p>' + shots + gal + more +
