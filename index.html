@@ -91,7 +91,7 @@ footer{margin-top:44px;color:var(--muted);font-size:.9rem;border-top:1px solid v
   </section>
   <main class="grid" id="apps"></main>
   <section class="sec" id="sec"></section>
-  <footer><p data-t="ai"></p><p><span data-t="contact"></span> <a href="mailto:luckyapps1975@gmail.com">luckyapps1975@gmail.com</a></p><p data-t="foot"></p></footer>
+  <footer><p data-t="ai"></p><p><span data-t="contact"></span> <a href="mailto:luckyapps1975@gmail.com">luckyapps1975@gmail.com</a></p><p><a href="privacy-site.html" data-t="d_site"></a></p><p data-t="foot"></p></footer>
 </div>
 
 <div id="lb" hidden role="dialog" aria-modal="true">
@@ -235,7 +235,7 @@ var TEXT = {
     h1: "Приложения для Android и Windows, которые помогают",
     sub: "Ничего лишнего — только функционал!",
     dl_android: "Скачать для Android", dl_windows: "Скачать для Windows", soon: "Скоро",
-    langs: "Языки приложения:", thanks: "Спасибо! Ваша оценка:", gal: "Скриншоты приложения", lb_close: "Закрыть", lb_prev: "Назад", lb_next: "Вперёд", downloads: "скачиваний", rate: "Оцените:", none: "нет оценок", more: "Подробнее",
+    langs: "Языки приложения:", thanks: "Спасибо! Ваша оценка:", d_site: "Политика конфиденциальности сайта", gal: "Скриншоты приложения", lb_close: "Закрыть", lb_prev: "Назад", lb_next: "Вперёд", downloads: "скачиваний", rate: "Оцените:", none: "нет оценок", more: "Подробнее",
     ready: "Готово", dev: "В разработке",
     hint_android: "Телефон может спросить разрешение на установку из этого источника.",
     hint_windows: "Windows может показать окно «Система Windows защитила ваш компьютер».",
@@ -246,7 +246,7 @@ var TEXT = {
     h1: "Android and Windows apps that help",
     sub: "Nothing extra, only functionality!",
     dl_android: "Download for Android", dl_windows: "Download for Windows", soon: "Coming soon",
-    langs: "App languages:", thanks: "Thank you! Your rating:", gal: "App screenshots", lb_close: "Close", lb_prev: "Previous", lb_next: "Next", downloads: "downloads", rate: "Rate it:", none: "no ratings yet", more: "Details",
+    langs: "App languages:", thanks: "Thank you! Your rating:", d_site: "Website Privacy Policy", gal: "App screenshots", lb_close: "Close", lb_prev: "Previous", lb_next: "Next", downloads: "downloads", rate: "Rate it:", none: "no ratings yet", more: "Details",
     ready: "Ready", dev: "In development",
     hint_android: "Your phone may ask to allow installs from this source.",
     hint_windows: "Windows may show a \"Windows protected your PC\" window.",
@@ -277,10 +277,10 @@ function loadStats() {
     })
     .catch(function () {});
 }
-function countDownload(id) {
-  var last = +lsGet("dl_" + id) || 0, now = Date.now();
+function countDownload(id, file) {
+  var key = "dl_" + file, last = +lsGet(key) || 0, now = Date.now();
   if (now - last < 60000) return;
-  lsSet("dl_" + id, now);
+  lsSet(key, now);
   sbRpc("inc_download", { p_app: id }).then(function () { STATS[id].downloads++; render(); }).catch(function () {});
 }
 function rateApp(id, n) {
@@ -324,7 +324,7 @@ function render() {
     }
     var gal = a.gallery ? '<div class="gal" role="group" aria-label="' + esc(T.gal) + '">' + a.gallery.items.map(function (g, i) { return '<button type="button" class="gthumb" data-g="' + a.id + '" data-i="' + i + '"><img src="' + a.gallery.dir + g.n + '-s.webp" width="110" height="226" loading="lazy" decoding="async" alt="' + esc(g.cap[lang]) + '"><span>' + esc(g.cap[lang]) + '</span></button>'; }).join("") + '</div>' : "";
     var dls = a.downloads
-      ? '<p class="hint">' + a.dlnote[lang] + '</p>' + a.downloads.map(function (d, i) { return '<a class="dl' + (i ? ' dl2' : '') + '" data-a="' + a.id + '" href="' + d.href + '">' + d[lang] + '</a>'; }).join("")
+      ? '<p class="hint">' + a.dlnote[lang] + '</p>' + a.downloads.map(function (d, i) { return '<a class="dl" data-a="' + a.id + '" href="' + d.href + '">' + d[lang] + '</a>'; }).join("")
       : '<a class="dl" data-a="' + a.id + '" ' + (a.file ? 'href="' + a.file + '"' : 'aria-disabled="true"') + '>' + (a.file ? T["dl_" + a.platform] : T.soon) + '</a>';
     var more = '<details data-a="' + a.id + '"' + (openIds.indexOf(a.id) > -1 ? " open" : "") + '><summary>' + T.more + '</summary>' + feat + a.more[lang].map(function (p) { return Array.isArray(p) ? "<ul class='feat'>" + p.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" : "<p>" + esc(p) + "</p>"; }).join("") + (a.docs || [a.doc]).map(function (x) { return '<p><a href="' + x.href + '">' + x[lang] + '</a></p>'; }).join("") + '</details>';
     card.innerHTML =
@@ -346,7 +346,7 @@ document.addEventListener("click", function (e) {
   var s = e.target.closest("button[data-s]");
   if (s) { rateApp(s.dataset.a, +s.dataset.s); return; }
   var d = e.target.closest("a.dl[href]");
-  if (d) { countDownload(d.dataset.a); }
+  if (d) { countDownload(d.dataset.a, d.getAttribute("href")); }
 });
 
 var lb = { id: null, i: 0 };

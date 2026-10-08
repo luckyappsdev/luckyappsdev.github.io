@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website Privacy Policy — Lucky Apps</title>
+<meta name="robots" content="index,follow">
+<style>
+@font-face{font-family:Manrope;src:url("fonts/Manrope.woff") format("woff");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:Unbounded;src:url("fonts/Unbounded.woff") format("woff");font-weight:200 900;font-style:normal;font-display:swap}
+:root{--bg:#f3f7f2;--card:#fff;--ink:#12352a;--muted:#5b7267;--green:#2f9e5b;--line:#d7e3da}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 48px}
+a{color:var(--green);font-weight:800}
+.back{display:inline-block;margin-bottom:18px;text-decoration:none}
+h1{font-family:Unbounded,Manrope,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;font-weight:700;font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.2;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 20px;font-weight:600}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.langs button{border:1.5px solid var(--ink);background:none;border-radius:999px;padding:5px 14px;font:inherit;font-weight:800;color:var(--ink);cursor:pointer}
+.langs button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:6px 24px 20px}
+h2{font-size:1.05rem;margin:20px 0 6px}
+.card p{margin:0;color:#2c4a3e}
+.upd{margin-top:18px;color:var(--muted);font-size:.9rem}
+button:focus-visible,a:focus-visible{outline:3px solid #e8b923;outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html" id="back"></a>
+  <h1 id="title"></h1>
+  <p class="sub">Lucky Apps</p>
+  <div class="langs" id="langs" role="group" aria-label="Language"></div>
+  <div class="card" id="card"></div>
+  <p class="upd" id="upd"></p>
+</div>
+<script>
+var L = {"ru": {"name": "Русский", "title": "Политика конфиденциальности сайта", "back": "← На главную", "upd": "Обновлено: октябрь 2026", "s": [["Что это за сайт", "Сайт luckyappsdev.github.io представляет приложения Lucky Apps и позволяет их скачать. На сайте нет регистрации, рекламы и аналитики, а шрифты и скриншоты хранятся на самом сайте. Для каждого приложения действует своя политика конфиденциальности, ссылка на неё есть в карточке приложения."], ["Счётчики и оценки", "Когда открывается страница, она запрашивает у сервиса Supabase текущее число скачиваний и оценки приложений. Когда вы нажимаете кнопку скачивания или ставите оценку, на сервер отправляются только название приложения и (для оценки) число от 1 до 5. Эти записи не содержат вашего имени, почты или других сведений о вас. Для защиты от накрутки сервер может кратковременно учитывать только факт и время обращения, без IP-адресов. Точность счётчиков и оценок не гарантируется."], ["Данные в вашем браузере", "Сайт сохраняет в вашем браузере (в локальном хранилище, а не в файлах cookie для слежения) выбранный язык, отметку о том, что вы уже поставили оценку (и саму оценку), и время последнего учтённого скачивания, чтобы не считать повторные нажатия. Эти данные остаются на вашем устройстве, и вы можете удалить их в настройках браузера."], ["Сервисы, на которых работает сайт", "Сайт размещён на GitHub Pages, файлы программ скачиваются со страницы релизов GitHub, а счётчики хранятся в Supabase. Как и любые серверы в интернете, эти сервисы могут обрабатывать технические данные запроса, в том числе IP-адрес, по собственным правилам. Автор сайта не использует эти данные и не передаёт их третьим лицам."], ["Внешние ссылки", "Ссылки на другие сайты (например, VirusTotal или страница загрузки .NET) открываются в браузере по вашему решению; на этих сайтах действуют их собственные правила."], ["Изменения", "Если на сайте появятся новые функции, связанные с обработкой данных, эта политика будет обновлена."], ["Контакты", "Вопросы и пожелания: "]]}, "en": {"name": "English", "title": "Website Privacy Policy", "back": "← Home", "upd": "Last updated: October 2026", "s": [["About this site", "The website luckyappsdev.github.io presents Lucky Apps applications and lets you download them. The site has no registration, advertising or analytics, and its fonts and screenshots are stored on the site itself. Each application has its own privacy policy, linked from the application's card."], ["Counters and ratings", "When the page opens, it asks the Supabase service for the current number of downloads and the ratings of the applications. When you press a download button or give a rating, only the application name and (for a rating) a number from 1 to 5 are sent to the server. These records contain no name, email or other information about you. To protect against manipulation, the server may briefly record only the fact and time of a request, without IP addresses. The accuracy of counters and ratings is not guaranteed."], ["Data in your browser", "The site stores in your browser (in local storage, not in tracking cookies) the selected language, a note that you have already given a rating (and the rating itself), and the time of the last counted download, so that repeated clicks are not counted. This data stays on your device and you can delete it in your browser settings."], ["Services the site runs on", "The site is hosted on GitHub Pages, program files are downloaded from the GitHub releases page, and the counters are stored in Supabase. Like any internet servers, these services may process technical request data, including the IP address, under their own rules. The site's author does not use this data and does not pass it to third parties."], ["External links", "Links to other websites (for example VirusTotal or the .NET download page) open in your browser at your own decision; those websites have their own rules."], ["Changes", "If new features related to data processing appear on the site, this policy will be updated."], ["Contact", "Questions and feedback: "]]}};
+var MAIL = "luckyapps1975@gmail.com";
+var order = ["en","ru"];
+var cur = "en";
+try { var s = localStorage.getItem("plang"); if (s && L[s]) cur = s; else { var n = (navigator.language || "").slice(0,2); if (L[n]) cur = n; else if (/^(ru|uk|be)$/.test(n)) cur = "ru"; } } catch (e) {}
+function render() {
+  var t = L[cur];
+  document.documentElement.lang = cur;
+  document.getElementById("back").textContent = t.back;
+  document.getElementById("title").textContent = t.title;
+  document.getElementById("upd").textContent = t.upd;
+  var lb = document.getElementById("langs"); lb.innerHTML = "";
+  order.forEach(function (k) {
+    var b = document.createElement("button"); b.type = "button"; b.textContent = L[k].name;
+    b.setAttribute("aria-pressed", k === cur);
+    b.onclick = function () { cur = k; try { localStorage.setItem("plang", k); } catch (e) {} render(); };
+    lb.appendChild(b);
+  });
+  var c = document.getElementById("card"); c.innerHTML = "";
+  t.s.forEach(function (sec, i) {
+    var h = document.createElement("h2"); h.textContent = sec[0]; c.appendChild(h);
+    var p = document.createElement("p"); p.textContent = sec[1];
+    if (i === t.s.length - 1) { var a = document.createElement("a"); a.href = "mailto:" + MAIL; a.textContent = MAIL; p.appendChild(a); }
+    c.appendChild(p);
+  });
+}
+render();
+</script>
+</body>
+</html>
