@@ -1,0 +1,14 @@
+name: Keep Supabase awake
+on:
+  schedule:
+    - cron: "17 6 */3 * *"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read one row from the counters table
+        run: |
+          curl --fail --silent --show-error \
+            "https://qmcbsxwdczynfxwenvhs.supabase.co/rest/v1/app_stats?select=app_id&limit=1" \
+            -H "apikey: sb_publishable__fpKpq1fJUh2er23CJ4i0Q_dGxTRZYI"
