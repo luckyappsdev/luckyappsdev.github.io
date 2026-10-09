@@ -30,7 +30,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #e8b923;outline-offset:2p
 <div class="wrap">
   <a class="back" href="index.html" id="back"></a>
   <h1 id="title"></h1>
-  <p class="sub">BTRMousePlus · Автор / Author: LuckyGreenhorn</p>
+  <p class="sub" id="sub"></p>
   <div class="langs" id="langs" role="group" aria-label="Language"></div>
   <div class="card" id="card"></div>
   <p class="upd" id="upd"></p>
@@ -47,6 +47,7 @@ function render() {
   document.getElementById("back").textContent = t.back;
   document.getElementById("title").textContent = t.title;
   document.getElementById("upd").textContent = t.upd;
+  document.getElementById("sub").textContent = "BTRMousePlus · " + (cur === "ru" ? "Автор: " : "Author: ") + "LuckyGreenhorn";
   var lb = document.getElementById("langs"); lb.innerHTML = "";
   order.forEach(function (k) {
     var b = document.createElement("button"); b.type = "button"; b.textContent = L[k].name;
