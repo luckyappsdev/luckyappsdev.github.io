@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lucky Apps</title>
-<meta name="description" content="Android and Windows apps by Lucky Apps. Приложения для Android и Windows от Lucky Apps.">
+<title>LuckyGreenhorn</title>
+<meta name="description" content="Android and Windows apps by LuckyGreenhorn. Приложения для Android и Windows от LuckyGreenhorn.">
 <style>
 @font-face{font-family:Manrope;src:url("fonts/Manrope.woff") format("woff");font-weight:200 800;font-style:normal;font-display:swap}
 @font-face{font-family:Unbounded;src:url("fonts/Unbounded.woff") format("woff");font-weight:200 900;font-style:normal;font-display:swap}
@@ -79,7 +79,7 @@ footer{margin-top:44px;color:var(--muted);font-size:.9rem;border-top:1px solid v
 <body>
 <div class="wrap">
   <header>
-    <div class="logo">Lucky<span>Apps</span></div>
+    <div class="logo">Lucky<span>Greenhorn</span></div>
     <div class="lang" role="group" aria-label="Language">
       <button data-l="ru" aria-pressed="true">RU</button>
       <button data-l="en" aria-pressed="false">EN</button>
@@ -188,12 +188,12 @@ var APPS = [
     platform: "windows",
     status: "ready",
     downloads: [
-      { href: "https://github.com/luckyappsdev/BTRMousePlus/releases/download/v1.0.0/BTRMousePlus_1.0.zip", ru: "Скачать архив (ZIP)", en: "Download archive (ZIP)" },
-      { href: "https://github.com/luckyappsdev/BTRMousePlus/releases/download/v1.0.0/BTRMousePlus_Setup_1.0.exe", ru: "Скачать установщик", en: "Download installer" }
+      { href: "https://github.com/luckyappsdev/BTRMousePlus/releases/download/v1.0.0/BTRMousePlus_1.0.zip", ru: "Скачать архив (ZIP, 12,7 МБ)", en: "Download archive (ZIP, 12.7 MB)" },
+      { href: "https://github.com/luckyappsdev/BTRMousePlus/releases/download/v1.0.0/BTRMousePlus_Setup_1.0.exe", ru: "Скачать установщик (11,7 МБ)", en: "Download installer (11.7 MB)" }
     ],
     dlnote: {
-      ru: "Установщик и архив собраны из одних и тех же файлов программы: это один и тот же продукт в двух вариантах. Установщик создаёт ярлыки и запись в «Программы и компоненты». Архив — переносимая версия: папку с файлами можно разместить где угодно. На момент выпуска при проверке на VirusTotal установщик вызывает предупреждение у одного антивирусного движка, архив — ни у одного (отчёты: <a href='https://www.virustotal.com/gui/file/f2849b23884b96e3611aab6890d1be640d29e8c2cf8f240f7984345660aaae0c' target='_blank' rel='noopener'>установщик</a>, <a href='https://www.virustotal.com/gui/file/91fa992902becce63dd0a76a104fbcfb4bda6cbe62c9a1f627284cd4d3035d16' target='_blank' rel='noopener'>архив</a>). Выбор варианта остаётся за вами.",
-      en: "The installer and the archive are built from the same program files: it is one product in two forms. The installer creates shortcuts and an entry in Apps & features. The archive is a portable version: the folder can be placed anywhere. At the time of release, VirusTotal reports a warning from one antivirus engine for the installer and none for the archive (reports: <a href='https://www.virustotal.com/gui/file/f2849b23884b96e3611aab6890d1be640d29e8c2cf8f240f7984345660aaae0c' target='_blank' rel='noopener'>installer</a>, <a href='https://www.virustotal.com/gui/file/91fa992902becce63dd0a76a104fbcfb4bda6cbe62c9a1f627284cd4d3035d16' target='_blank' rel='noopener'>archive</a>). The choice is yours."
+      ru: "Установщик и архив собраны из одних и тех же файлов программы: это один и тот же продукт в двух вариантах. Архив — переносимая версия: папку с файлами можно разместить где угодно (на диске занимает 33,7 МБ). Установщик создаёт ярлыки и запись в «Программы и компоненты» (на диске занимает 38,5 МБ). На момент выпуска при проверке на VirusTotal установщик вызывает предупреждение у одного антивирусного движка, архив — ни у одного (отчёты: <a href='https://www.virustotal.com/gui/file/f2849b23884b96e3611aab6890d1be640d29e8c2cf8f240f7984345660aaae0c' target='_blank' rel='noopener'>установщик</a>, <a href='https://www.virustotal.com/gui/file/91fa992902becce63dd0a76a104fbcfb4bda6cbe62c9a1f627284cd4d3035d16' target='_blank' rel='noopener'>архив</a>). Выбор варианта остаётся за вами.",
+      en: "The installer and the archive are built from the same program files: it is one product in two forms. The archive is a portable version: the folder can be placed anywhere (takes 33.7 MB on disk). The installer creates shortcuts and an entry in Apps & features (takes 38.5 MB on disk). At the time of release, VirusTotal reports a warning from one antivirus engine for the installer and none for the archive (reports: <a href='https://www.virustotal.com/gui/file/f2849b23884b96e3611aab6890d1be640d29e8c2cf8f240f7984345660aaae0c' target='_blank' rel='noopener'>installer</a>, <a href='https://www.virustotal.com/gui/file/91fa992902becce63dd0a76a104fbcfb4bda6cbe62c9a1f627284cd4d3035d16' target='_blank' rel='noopener'>archive</a>). The choice is yours."
     },
     name: { ru: "BTRMousePlus", en: "BTRMousePlus" },
     desc: {
@@ -235,23 +235,23 @@ var TEXT = {
     h1: "Приложения для Android и Windows, которые помогают",
     sub: "Ничего лишнего — только функционал!",
     dl_android: "Скачать для Android", dl_windows: "Скачать для Windows", soon: "Скоро",
-    langs: "Языки приложения:", thanks: "Спасибо! Ваша оценка:", d_site: "Политика конфиденциальности сайта", gal: "Скриншоты приложения", lb_close: "Закрыть", lb_prev: "Назад", lb_next: "Вперёд", downloads: "скачиваний", rate: "Оцените:", none: "нет оценок", more: "Подробнее",
+    langs: "Языки приложения:", thanks: "Спасибо! Ваша оценка:", rated: "Оценка уже выполнена:", d_site: "Политика конфиденциальности сайта", gal: "Скриншоты приложения", lb_close: "Закрыть", lb_prev: "Назад", lb_next: "Вперёд", downloads: "скачиваний", rate: "Оцените:", none: "нет оценок", more: "Подробнее",
     ready: "Готово", dev: "В разработке",
     hint_android: "Телефон может спросить разрешение на установку из этого источника.",
     hint_windows: "Windows может показать окно «Система Windows защитила ваш компьютер».",
     ai: "При создании приложений использовался AI (ChatGPT, Kimi 2.6 Adagio, Claude Sonnet).", sec_h: "Безопасность", sec_p: ["Файлы приложений новые: у них пока нет платной цифровой подписи и накопленной репутации, поэтому телефон, Windows или антивирус могут отреагировать на них предупреждением.", "Это не значит, что файл опасен, но для вашей безопасности рекомендуем перед установкой проверить скачанный файл любыми доступными способами и программами по вашему выбору, например антивирусом на вашем устройстве или онлайн-сервисами наподобие <a href='https://www.virustotal.com/' target='_blank' rel='noopener'>VirusTotal</a>.", "Каждый файл программы BTRMousePlus перед упаковкой проверен на VirusTotal отдельно. Установщик создан в Inno Setup Compiler. Предупреждение при проверке установщика мы связываем с тем, что файл новый и не имеет цифровой подписи и накопленной репутации: тестовый установщик без нашей программы вызвал похожие предупреждения."],
-    contact: "Замечания и пожелания:", foot: "© Lucky Apps. Все права защищены."
+    contact: "Замечания и пожелания:", foot: "© LuckyGreenhorn. Все права защищены."
   },
   en: {
     h1: "Android and Windows apps that help",
     sub: "Nothing extra, only functionality!",
     dl_android: "Download for Android", dl_windows: "Download for Windows", soon: "Coming soon",
-    langs: "App languages:", thanks: "Thank you! Your rating:", d_site: "Website Privacy Policy", gal: "App screenshots", lb_close: "Close", lb_prev: "Previous", lb_next: "Next", downloads: "downloads", rate: "Rate it:", none: "no ratings yet", more: "Details",
+    langs: "App languages:", thanks: "Thank you! Your rating:", rated: "Rating already submitted:", d_site: "Website Privacy Policy", gal: "App screenshots", lb_close: "Close", lb_prev: "Previous", lb_next: "Next", downloads: "downloads", rate: "Rate it:", none: "no ratings yet", more: "Details",
     ready: "Ready", dev: "In development",
     hint_android: "Your phone may ask to allow installs from this source.",
     hint_windows: "Windows may show a \"Windows protected your PC\" window.",
     ai: "AI (ChatGPT, Kimi 2.6 Adagio, Claude Sonnet) was used to create the apps.", sec_h: "Safety", sec_p: ["The app files are new: they do not yet have a paid digital signature or an established reputation, so your phone, Windows or antivirus may react to them with a warning.", "This does not mean the file is dangerous, but for your safety we recommend checking the downloaded file before installing, by any available means and programs of your choice, for example with an antivirus on your device or online services such as <a href='https://www.virustotal.com/' target='_blank' rel='noopener'>VirusTotal</a>.", "Each file of the BTRMousePlus program was checked on VirusTotal separately before packaging. The installer was created with Inno Setup Compiler. We associate the warning shown for the installer with the fact that it is a new file without a digital signature and an established reputation: a test installer without our program triggered similar warnings."],
-    contact: "Feedback and suggestions:", foot: "© Lucky Apps. All rights reserved."
+    contact: "Feedback and suggestions:", foot: "© LuckyGreenhorn. All rights reserved."
   }
 };
 
@@ -285,7 +285,7 @@ function countDownload(id, file) {
 }
 function rateApp(id, n) {
   if (lsGet("rated_" + id)) return;
-  sbRpc("rate_app", { p_app: id, p_stars: n }).then(function () { lsSet("rated_" + id, n); var st = STATS[id]; st.sum += n; st.votes++; render(); }).catch(function () {});
+  sbRpc("rate_app", { p_app: id, p_stars: n }).then(function () { lsSet("rated_" + id, n); var st = STATS[id]; st.sum += n; st.votes++; st.fresh = true; render(); }).catch(function () {});
 }
 
 var lang = "ru";
@@ -331,7 +331,7 @@ function render() {
       '<div class="top"><img class="icon' + (a.round ? " round" : "") + '" src="' + a.icon + '" alt=""><div><h2></h2><span class="tag plat">' + (a.platform === "android" ? "Android" : "Windows") + '</span> <span class="tag ' + a.status + '">' + T[a.status] + '</span></div></div>' +
       '<p class="desc"></p>' + shots + gal + more +
       '<div class="meta"><span>' + (st.ok ? st.downloads : "—") + ' ' + T.downloads + '</span><span>' + (st.ok ? (avg ? "★ " + avg + " (" + st.votes + ")" : T.none) : "—") + '</span></div>' +
-      '<div class="stars"><span>' + (mine ? T.thanks + " ★" + mine : T.rate) + '</span> ' + stars + '</div>' +
+      '<div class="stars"><span>' + (mine ? (st.fresh ? T.thanks : T.rated) + " ★" + mine : T.rate) + '</span> ' + stars + '</div>' +
       dls +
       (a.req ? '<p class="hint">' + a.req[lang] + '</p>' : '') + '<p class="hint">' + T["hint_" + a.platform] + '</p>' + '<p class="hint"><strong>' + T.langs + '</strong> ' + esc(a.langs.join(", ")) + '</p>' + (a.ask ? '<p class="hint"><strong>' + esc(a.ask.lead[lang]) + '</strong> ' + esc(a.ask.text[lang]) + '</p>' : '');
     card.querySelector("h2").textContent = a.name[lang];
