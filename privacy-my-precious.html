@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy My Precious!</title>
+<title>Privacy Policy My precious!</title>
 <meta name="robots" content="index,follow">
 <style>
 @font-face{font-family:Manrope;src:url("fonts/Manrope.woff") format("woff");font-weight:200 800;font-style:normal;font-display:swap}
@@ -46,7 +46,7 @@ function render() {
   document.documentElement.lang = cur;
   document.getElementById("back").textContent = t.back;
   document.getElementById("title").textContent = t.title;
-  var pn = cur === "ru" ? "Моя прелесть!" : "My Precious!";
+  var pn = ({"ru": "Моя прелесть!", "en": "My precious!", "es": "¡Mi tesoro!", "pt": "Meu precioso!", "nl": "Mijn schat!", "zh": "我的宝贝！"})[cur] || "My precious!";
   document.getElementById("sub").textContent = pn;
   document.title = t.title + " " + pn;
   document.getElementById("upd").textContent = t.upd;
