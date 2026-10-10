@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — BTRMousePlus</title>
+<title>Privacy Policy BTRMousePlus</title>
 <meta name="robots" content="index,follow">
 <style>
 @font-face{font-family:Manrope;src:url("fonts/Manrope.woff") format("woff");font-weight:200 800;font-style:normal;font-display:swap}
@@ -46,6 +46,7 @@ function render() {
   document.documentElement.lang = cur;
   document.getElementById("back").textContent = t.back;
   document.getElementById("title").textContent = t.title;
+  document.title = t.title + " " + "BTRMousePlus";
   document.getElementById("upd").textContent = t.upd;
   var lb = document.getElementById("langs"); lb.innerHTML = "";
   order.forEach(function (k) {

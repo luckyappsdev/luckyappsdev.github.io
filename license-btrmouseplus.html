@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Terms of Use — BTRMousePlus</title>
+<title>Terms of Use BTRMousePlus</title>
 <meta name="robots" content="index,follow">
 <style>
 @font-face{font-family:Manrope;src:url("fonts/Manrope.woff") format("woff");font-weight:200 800;font-style:normal;font-display:swap}
@@ -30,7 +30,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #e8b923;outline-offset:2p
 <div class="wrap">
   <a class="back" href="index.html" id="back"></a>
   <h1 id="title"></h1>
-  <p class="sub" id="sub"></p>
+  <p class="sub">BTRMousePlus</p>
   <div class="langs" id="langs" role="group" aria-label="Language"></div>
   <div class="card" id="card"></div>
   <p class="upd" id="upd"></p>
@@ -46,8 +46,8 @@ function render() {
   document.documentElement.lang = cur;
   document.getElementById("back").textContent = t.back;
   document.getElementById("title").textContent = t.title;
+  document.title = t.title + " " + "BTRMousePlus";
   document.getElementById("upd").textContent = t.upd;
-  document.getElementById("sub").textContent = "BTRMousePlus · " + (cur === "ru" ? "Автор: " : "Author: ") + "LuckyGreenhorn";
   var lb = document.getElementById("langs"); lb.innerHTML = "";
   order.forEach(function (k) {
     var b = document.createElement("button"); b.type = "button"; b.textContent = L[k].name;

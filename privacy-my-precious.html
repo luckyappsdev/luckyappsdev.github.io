@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — My Precious! / Моя прелесть!</title>
+<title>Privacy Policy My Precious!</title>
 <meta name="robots" content="index,follow">
 <style>
 @font-face{font-family:Manrope;src:url("fonts/Manrope.woff") format("woff");font-weight:200 800;font-style:normal;font-display:swap}
@@ -30,7 +30,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #e8b923;outline-offset:2p
 <div class="wrap">
   <a class="back" href="index.html" id="back"></a>
   <h1 id="title"></h1>
-  <p class="sub">My Precious! / Моя прелесть!</p>
+  <p class="sub" id="sub"></p>
   <div class="langs" id="langs" role="group" aria-label="Language"></div>
   <div class="card" id="card"></div>
   <p class="upd" id="upd"></p>
@@ -46,6 +46,9 @@ function render() {
   document.documentElement.lang = cur;
   document.getElementById("back").textContent = t.back;
   document.getElementById("title").textContent = t.title;
+  var pn = cur === "ru" ? "Моя прелесть!" : "My Precious!";
+  document.getElementById("sub").textContent = pn;
+  document.title = t.title + " " + pn;
   document.getElementById("upd").textContent = t.upd;
   var lb = document.getElementById("langs"); lb.innerHTML = "";
   order.forEach(function (k) {
