@@ -23,6 +23,23 @@
   "author": { "@type": "Organization", "name": "LuckyGreenhorn", "url": "https://luckyappsdev.github.io/" }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "My precious!",
+  "alternateName": "Моя прелесть!",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Android 5.1 and later",
+  "description": "A maintenance planner for your cars. Enter the date of the last oil, filter, spark plug or brake pad change, and the app calculates the next service date and reminds you in advance.",
+  "inLanguage": ["en", "ru", "es", "pt", "nl", "zh"],
+  "url": "https://luckyappsdev.github.io/",
+  "downloadUrl": "https://github.com/luckyappsdev/MyPrecious/releases/tag/v1.0.0",
+  "softwareVersion": "1.0",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Organization", "name": "LuckyGreenhorn", "url": "https://luckyappsdev.github.io/" }
+}
+</script>
 <style>
 @font-face{font-family:Manrope;src:url("fonts/Manrope.woff") format("woff");font-weight:200 800;font-style:normal;font-display:swap}
 @font-face{font-family:Unbounded;src:url("fonts/Unbounded.woff") format("woff");font-weight:200 900;font-style:normal;font-display:swap}
@@ -155,6 +172,17 @@ var APPS = [
     platform: "android", /* android или windows */
     status: "ready",     /* ready = готово, dev = в разработке */
     file: "",            /* сюда вставляется ссылка на файл для скачивания */
+    downloads: [
+      { href: "https://github.com/luckyappsdev/MyPrecious/releases/download/v1.0.0/my-precious-1.0.apk", ru: "Скачать для Android (APK, 6,52 МБ)", en: "Download for Android (APK, 6.52 MB)" }
+    ],
+    dlnote: {
+      ru: "На момент выпуска при проверке на VirusTotal файл не вызывает предупреждений ни у одного из 67 антивирусных движков (<a href='https://www.virustotal.com/gui/file/159944cd024702103bdbed82985539f51110f65440ac4f98642b2e04aea7c049' target='_blank' rel='noopener'>отчёт</a>).",
+      en: "At the time of release, VirusTotal reports no warnings from any of the 67 antivirus engines for this file (<a href='https://www.virustotal.com/gui/file/159944cd024702103bdbed82985539f51110f65440ac4f98642b2e04aea7c049' target='_blank' rel='noopener'>report</a>)."
+    },
+    req: {
+      ru: "Версии Android: 5.1–16 (работа проверена на Android 5.1 и 16).",
+      en: "Android versions: 5.1–16 (tested on Android 5.1 and 16)."
+    },
     name: { ru: "Моя прелесть!", en: "My precious!" },
     desc: {
       ru: "Планировщик техобслуживания ваших автомобилей. Задайте дату последней замены масла, фильтров, свечей, колодок и других элементов, и приложение рассчитает срок следующей замены и заранее напомнит о ней.",
@@ -177,11 +205,13 @@ var APPS = [
     more: {
       ru: [
         "Приложение не предполагает использования интернета: данные хранятся на вашем телефоне.",
-        "Резервную копию вы создаёте сами и сохраняете в выбранную папку. Системное резервное копирование Android для приложения отключено."
+        "Резервную копию вы создаёте сами и сохраняете в выбранную папку. Системное резервное копирование Android для приложения отключено.",
+        "На очень слабых телефонах (мало памяти, старая версия Android) при смене языка приложение может закрыться. При повторном запуске оно откроется уже на выбранном языке."
       ],
       en: [
         "The app is not designed to use the Internet: your data is stored on your phone.",
-        "You create the backup file yourself and save it to a folder of your choice. Android's system backup is turned off for the app."
+        "You create the backup file yourself and save it to a folder of your choice. Android's system backup is turned off for the app.",
+        "On very low-end phones (little memory, an old Android version) the app may close when you change the language. When you open it again, it will use the selected language."
       ]
     }
   },
