@@ -242,7 +242,7 @@ var APPS = [
     status: "ready",
     downloads: [
       { href: "https://github.com/luckyappsdev/BTRMousePlus/releases/download/v1.0.0/BTRMousePlus_1.0.zip", ru: "Скачать архив (ZIP, 12,7 МБ)", en: "Download archive (ZIP, 12.7 MB)" },
-      { href: "https://github.com/luckyappsdev/BTRMousePlus/releases/download/v1.0.0/BTRMousePlus_Setup_1.0.exe", ru: "Скачать установщик (11,7 МБ)", en: "Download installer (11.7 MB)" }
+      { href: "https://github.com/luckyappsdev/BTRMousePlus/releases/download/v1.0.0/BTRMousePlus_Setup_1.0.exe", off: true, ru: "Установщик временно недоступен", en: "Installer temporarily unavailable" }
     ],
     dlnote: {
       ru: "Установщик и архив собраны из одних и тех же файлов программы: это один и тот же продукт в двух вариантах. Архив — переносимая версия: папку с файлами можно разместить где угодно (на диске занимает 33,7 МБ). Установщик создаёт ярлыки и запись в «Программы и компоненты» (на диске занимает 38,5 МБ). На момент выпуска при проверке на VirusTotal установщик вызывает предупреждения у двух антивирусных движков (эвристических), архив — ни у одного (отчёты: <a href='https://www.virustotal.com/gui/file/2217c8aeda2fe83d2b60f1944d371667c8e50cbb9a6205d6f9905817b61ec9fb' target='_blank' rel='noopener'>установщик</a>, <a href='https://www.virustotal.com/gui/file/2c3cdd93c291aae225024926f7eb718f97e84d2904e1c83d8ad6cdb6cf3bb9ef' target='_blank' rel='noopener'>архив</a>). Выбор варианта остаётся за вами.",
@@ -377,7 +377,7 @@ function render() {
     }
     var gal = a.gallery ? '<div class="gal" role="group" aria-label="' + esc(T.gal) + '">' + a.gallery.items.map(function (g, i) { return '<button type="button" class="gthumb" data-g="' + a.id + '" data-i="' + i + '"><img src="' + a.gallery.dir + g.n + '-s.webp" width="110" height="226" loading="lazy" decoding="async" alt="' + esc(g.cap[lang]) + '"><span>' + esc(g.cap[lang]) + '</span></button>'; }).join("") + '</div>' : "";
     var dls = a.downloads
-      ? '<p class="hint">' + a.dlnote[lang] + '</p>' + a.downloads.map(function (d, i) { return '<a class="dl" data-a="' + a.id + '" href="' + d.href + '">' + d[lang] + '</a>'; }).join("")
+      ? '<p class="hint">' + a.dlnote[lang] + '</p>' + a.downloads.map(function (d, i) { return d.off ? '<a class="dl" aria-disabled="true">' + d[lang] + '</a>' : '<a class="dl" data-a="' + a.id + '" href="' + d.href + '">' + d[lang] + '</a>'; }).join("")
       : '<a class="dl" data-a="' + a.id + '" ' + (a.file ? 'href="' + a.file + '"' : 'aria-disabled="true"') + '>' + (a.file ? T["dl_" + a.platform] : T.soon) + '</a>';
     var more = '<details data-a="' + a.id + '"' + (openIds.indexOf(a.id) > -1 ? " open" : "") + '><summary>' + T.more + '</summary>' + feat + a.more[lang].map(function (p) { return Array.isArray(p) ? "<ul class='feat'>" + p.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" : "<p>" + esc(p) + "</p>"; }).join("") + (a.docs || [a.doc]).map(function (x) { return '<p><a href="' + x.href + '">' + x[lang] + '</a></p>'; }).join("") + '</details>';
     card.innerHTML =
