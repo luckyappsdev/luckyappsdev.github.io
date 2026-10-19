@@ -31,12 +31,12 @@
   "alternateName": "Моя прелесть!",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Android 5.1 and later",
-  "description": "A car maintenance reminder app for Android. Enter the date of the last oil, filter, spark plug or brake pad change, and the app calculates the next service date and reminds you in advance. Keeps a service schedule for several cars and stores your data on the phone.",
-  "keywords": "car maintenance reminder, service schedule, oil change reminder, vehicle maintenance planner, Android app",
+  "description": "A car insurance and maintenance planner with reminders for Android. Set the policy expiry date, or the date of the last oil, filter, spark plug or brake pad change, and the app will remind you in advance as the policy expiry date or the planned service date approaches. Your data is stored on the phone.",
+  "keywords": "car insurance reminder, car maintenance reminder, service schedule, oil change reminder, vehicle maintenance planner, Android app",
   "featureList": [
     "Next service date calculated from the date of the last replacement",
-    "Up to 5 cars",
-    "Reminders 10, 5 and 1 day before the planned date, and every 5 days if it is missed",
+    "Up to 5 cars, up to 5 insurance policies per car (name and expiry date)",
+    "Reminders 30, 10 and 1 day before the set date or the planned deadline, and every 5 days if they are missed",
     "Colour-coded deadlines (green, yellow, orange, red)",
     "Six interface languages: English, Russian, Spanish, Portuguese, Dutch, Chinese",
     "Data stored on the phone, no Internet use"
@@ -193,11 +193,11 @@ var APPS = [
     status: "ready",     /* ready = готово, dev = в разработке */
     file: "",            /* сюда вставляется ссылка на файл для скачивания */
     downloads: [
-      { href: "https://github.com/luckyappsdev/MyPrecious/releases/download/v1.0.0/my-precious-1.0.apk", ru: "Скачать для Android (APK, 6,52 МБ)", en: "Download for Android (APK, 6.52 MB)" }
+      { href: "https://github.com/luckyappsdev/MyPrecious/releases/download/v1.0.0/my-precious-1.0.apk", ru: "Скачать для Android (APK, 6,55 МБ)", en: "Download for Android (APK, 6.55 MB)" }
     ],
     dlnote: {
-      ru: "На момент выпуска при проверке на VirusTotal файл не вызывает предупреждений ни у одного из 67 антивирусных движков (<a href='https://www.virustotal.com/gui/file/159944cd024702103bdbed82985539f51110f65440ac4f98642b2e04aea7c049' target='_blank' rel='noopener'>отчёт</a>).",
-      en: "At the time of release, VirusTotal reports no warnings from any of the 67 antivirus engines for this file (<a href='https://www.virustotal.com/gui/file/159944cd024702103bdbed82985539f51110f65440ac4f98642b2e04aea7c049' target='_blank' rel='noopener'>report</a>)."
+      ru: "На момент выпуска при проверке на VirusTotal файл не вызывает предупреждений ни у одного из 67 антивирусных движков (<a href='https://www.virustotal.com/gui/file/bd7ec4ed2434eeb2e4c58ea72b2d5d02d69ebee4522ab53a479af0d7b4b4a04a' target='_blank' rel='noopener'>отчёт</a>).",
+      en: "At the time of release, VirusTotal reports no warnings from any of the 67 antivirus engines for this file (<a href='https://www.virustotal.com/gui/file/bd7ec4ed2434eeb2e4c58ea72b2d5d02d69ebee4522ab53a479af0d7b4b4a04a' target='_blank' rel='noopener'>report</a>)."
     },
     req: {
       ru: "Версии Android: 5.1–16 (работа проверена на Android 5.1 и 16).",
@@ -205,21 +205,23 @@ var APPS = [
     },
     name: { ru: "Моя прелесть!", en: "My precious!" },
     desc: {
-      ru: "Приложение для Android: планировщик техобслуживания и напоминания для ваших автомобилей. Задайте дату последней замены масла, фильтров, свечей, колодок и других элементов, и приложение рассчитает срок следующей замены и заранее напомнит о ней. График обслуживания для нескольких автомобилей, данные хранятся на вашем телефоне.",
-      en: "A car maintenance reminder app for Android. Enter the date of the last oil, filter, spark plug or brake pad change, and the app calculates the next service date and reminds you in advance. Keeps a service schedule for several cars and stores your data on the phone."
+      ru: "Приложение для Android: планировщик страхования, техобслуживания и напоминания о них для ваших автомобилей. Установите дату окончания действия полиса страхования или задайте дату последней замены масла, фильтров, свечей, колодок и других элементов, и приложение заранее напомнит о приближении даты окончания действия полиса или даты планового обслуживания. Данные хранятся на вашем телефоне.",
+      en: "A car insurance and maintenance planner with reminders for Android. Set the policy expiry date, or the date of the last oil, filter, spark plug or brake pad change, and the app will remind you in advance as the policy expiry date or the planned service date approaches. Your data is stored on the phone."
     },
     feat: {
       ru: [
-        "Перечень регламентных работ подобран автором. Сроки замены в приложении носят рекомендательный характер и отражают субъективное мнение автора, основанное на статистике и собственном опыте, однако не являются заменой руководства по эксплуатации",
         "Можно вести до 5 автомобилей",
-        "Напоминания за 10, 5 и 1 день до запланированного срока, а при его пропуске — через каждые 5 дней",
-        "Цветовая индикация приближения обслуживания: зелёный (больше 90 дней), жёлтый (90–30), оранжевый (меньше 30), красный (обслуживание не выполнено)"
+        "Для каждого автомобиля можно добавить до 5 страховок, вводя название и дату окончания действия полиса каждой",
+        "Напоминания за 30, 10 и 1 день до установленной даты или запланированного срока, а при их пропуске — через каждые 5 дней",
+        "Цветовая индикация приближения обслуживания: зелёный (больше 90 дней), жёлтый (90–30), оранжевый (меньше 30), красный (обслуживание не выполнено)",
+        "Перечень регламентных работ подобран автором. Сроки замены в приложении носят рекомендательный характер и отражают субъективное мнение автора, основанное на статистике и собственном опыте, однако не являются заменой руководства по эксплуатации"
       ],
       en: [
-        "The list of routine services was selected by the author. Replacement intervals in the app are recommendations only and reflect the author's subjective opinion, based on statistics and personal experience, but are not a substitute for the vehicle's owner's manual",
         "Up to 5 cars can be tracked",
-        "Reminders 10, 5 and 1 day before the planned date, and every 5 days if it is missed",
-        "Colour-coded deadlines: green (over 90 days), yellow (90–30), orange (under 30), red (service not done)"
+        "For each car you can add up to 5 insurance policies, entering the name and the policy expiry date of each",
+        "Reminders 30, 10 and 1 day before the set date or the planned deadline, and every 5 days if they are missed",
+        "Colour-coded deadlines: green (over 90 days), yellow (90–30), orange (under 30), red (service not done)",
+        "The list of routine services was selected by the author. Replacement intervals in the app are recommendations only and reflect the author's subjective opinion, based on statistics and personal experience, but are not a substitute for the vehicle's owner's manual"
       ]
     },
     more: {
